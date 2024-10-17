@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-size: 70px;
+    background: url('/school-presentation-hd-4k-video.jpg');
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
+}
+
+#content {
+    display: flex;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#highScoreLabel {
+    position: absolute;
+    font-size: 1.5rem;
+    top: 0;
+    right: 0;
+    margin-top: 2.5rem;
+    margin-right: 3.5rem;
+}
+
+.randomNumberVariable{
+    display:flex;
+    justify-content: center;
+    font-size: xx-large;
+}
+
+#pointsBox{
+    position: absolute;
+    top: 0;
+    margin-top: 75px;
+}
+
+#gridContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    margin-right: 2.5rem;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100%;
+}
+
+.gridItem {
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 0.4rem;
+    font-weight: bold;
+}
+
+.inputBox {
+    width: 100%;
+    height: 100%;
+    font-size: 65px;
+    text-align: center;
+}
+
+#upperContainer{
+    margin-bottom: 5%;
+    margin-left: 20px;
+    width: 15%;
+    max-width: 200px;
+    height: 15%;
+}
+#bottomContainer{
+    margin-top: 2.5%;
+    margin-left: 20px;
+    width: 15%;
+    max-width: 200px;
+    height: 15%;
+}
+
+#rightInputBox, #leftInputBox, .middleBox {
+    width: 15%;
+    max-width: 200px;
+    text-align: center;
+}
+
+#middleContainer {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#buttonContainer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 2.5rem;
+    padding-right: 3.5rem;
+}
+
+#checkButton {
+    background-color: lightgrey;
+    position: absolute;
+    width: 10%;
+    max-width: 150px;
+    height: 5%;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    margin-right: 2.5rem;
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+#checkButton:hover {
+    background-color: lightgreen;
+}
+
+#checkButton:active {
+    transform: translateY(2px);
+}

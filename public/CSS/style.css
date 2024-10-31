@@ -1,51 +1,29 @@
 * {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0px;
-    font-size: 70px;
-    background: url('../assets/background.jpg');
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: black;
+    background: url('../assets/background.jpg');
 }
 
 #content {
     display: flex;
 }
 
-#wrapper {
+#leftContainer {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
 }
 
-#highScoreLabel {
-    position: absolute;
-    font-size: 1.5rem;
-    top: 0;
-    right: 0;
-    margin-top: 2.5rem;
-    margin-right: 3.5rem;
-}
-
-.randomNumberVariable{
-    display:flex;
-    justify-content: center;
-    font-size: xx-large;
-}
-
-#pointsBox{
-    position: absolute;
-    top: 0;
-    margin-top: 75px;
-}
-
-#gridContainer {
+#rightContainer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,63 +31,20 @@ body {
     margin-right: 2.5rem;
 }
 
-#grid {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    width: 100%;
-}
-
-.gridItem {
-    background-color: #f0f0f0;
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 0.4rem;
-    font-weight: bold;
-}
-
-.inputBox {
-    width: 100%;
-    height: 100%;
-    font-size: 65px;
-    text-align: center;
-}
-
-#upperContainer{
-    margin-bottom: 5%;
-    margin-left: 20px;
-    width: 15%;
-    max-width: 200px;
-    height: 15%;
-}
-#bottomContainer{
-    margin-top: 2.5%;
-    margin-left: 20px;
-    width: 15%;
-    max-width: 200px;
-    height: 15%;
-}
-
-#rightInputBox, #leftInputBox, .middleBox {
-    width: 15%;
-    max-width: 200px;
-    text-align: center;
-}
-
-#middleContainer {
-    display: flex;
-    width: 100%;
-    height: 15%;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-#buttonContainer {
+#pointsLabel {
     position: absolute;
+    top: 0;
+    margin-top: 5.1rem;
+    font-size: 3.8rem;
+}
+
+#highScoreLabel {
+    position: absolute;
+    top: 0;
     right: 0;
-    bottom: 0;
-    padding-bottom: 2.5rem;
-    padding-right: 3.5rem;
+    margin-top: 2.5rem;
+    margin-right: 3.5rem;
+    font-size: 1.5rem;
 }
 
 #checkButton {
@@ -136,4 +71,77 @@ body {
 
 #checkButton:active {
     transform: translateY(2px);
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100%;
+}
+
+.gridItem {
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 0.4rem;
+    font-weight: bold;
+}
+
+#topContainer, #bottomContainer {
+    width: 15%;
+    max-width: 150px;
+    height: 15%;
+}
+
+#middleContainer {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputBox {
+    width: 100%;
+    height: 100%;
+    font-size: 3.8rem;
+    text-align: center;
+    outline: none;
+    border: solid 2px;
+    border-color: #4b4b4b;
+
+    box-shadow: 0 4px 8px 0 rgba(173, 216, 230, 0.5), 0 6px 20px 0 rgba(173, 216, 230, 0.5);
+}
+
+#rightInputBox, #leftInputBox, #randomNumberInputBox {
+    width: 15%;
+    max-width: 150px;
+    text-align: center;
+}
+
+#topInputBox {
+    border-bottom: none;
+    border-radius: 8px 8px 0px 0px;
+}
+
+#bottomInputBox {
+    border-top: none;
+    border-radius: 0px 0px 8px 8px;
+}
+
+#rightInputBox {
+    border-left: none;
+    border-radius: 0px 8px 8px 0px;
+}
+
+#leftInputBox {
+    border-right: none;
+    border-radius: 8px 0px 0px 8px;
+    box-shadow: none;
+}
+
+#randomNumberInputBox {
+    border: none;
+    box-shadow: none;
+    z-index: 1;
 }

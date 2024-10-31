@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>hundred tal spil</title>
+    <title>Kids Game</title>
 </head>
 <body>
     <div id="content">
-        <div id="wrapper">
-            <label type="text" id="pointsBox"></label>
-            <div id="upperContainer">
-                <label id="upperRandomNumber" class="randomNumberVariable"></label>
-                <input type="text" autocomplete="off" id="upperInputBox" class="inputBox">
+        <div id="leftContainer">
+            <label id="pointsLabel" type="text"></label>
+
+            <div id="topContainer">
+                <input id="topInputBox" class="inputBox" type="text" autocomplete="off">
             </div>
+
             <div id="middleContainer">
-                <label id="middleRandomNumberNegative" class="randomNumberVariable"></label>
-                <input type="text" autocomplete="off" id="leftInputBox" class="inputBox">
-                <label id="randomNumber" class="middleBox"></label>
-                <input type="text" autocomplete="off" id="rightInputBox" class="inputBox">
-                <label id="middleRandomNumber" class="randomNumberVariable"></label>
+                <input id="leftInputBox" class="inputBox" type="text" autocomplete="off">
+                <input id="randomNumberInputBox" class="inputBox" type="text" autocomplete="off"></input>
+                <input id="rightInputBox" class="inputBox" type="text" autocomplete="off">
             </div>
+
             <div id="bottomContainer">
-                <input type="text" autocomplete="off" id="lowerInputBox" class="inputBox">
-                <label id="upperRandomNumberNegative" class="randomNumberVariable"></label>
+                <input id="bottomInputBox" class="inputBox" type="text" autocomplete="off">
             </div>
         </div>
 
-        <div id="gridContainer">
+        <div id="rightContainer">
             <div id="grid"></div>
         </div>
     </div>

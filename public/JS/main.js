@@ -2,6 +2,7 @@ const pointScoreLabel = document.getElementById('pointsLabel');
 const highScoreLabel = document.getElementById('highScoreLabel');
 const randomNumberLabel = document.getElementById('randomNumberInputBox')
 const inputBoxes = Array.from(document.querySelectorAll('#topInputBox, #bottomInputBox, #rightInputBox, #leftInputBox'));
+var usedNumbers = [];
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * ((max + 1) - min) + min);
@@ -21,6 +22,7 @@ function gridColors(resetColors = false) {
     let gridItems = Array.from(document.getElementsByClassName('gridItem'));
 
     if (resetColors) {
+        usedNumbers = [];
         gridItems.forEach(gridItem => {
             gridItem.style.backgroundColor = "white";
         });
@@ -28,8 +30,17 @@ function gridColors(resetColors = false) {
     }
 
     gridItems.forEach(gridItem => {
+        usedNumbers.forEach((usedNumber) => {
+            if (gridItem.textContent === usedNumber) {
+                gridItem.style.backgroundColor = "green";
+            }
+        });
+
         if (gridItem.textContent === randomNumber.toString()) {
-            gridItem.style.backgroundColor = "green";
+            gridItem.style.backgroundColor = "yellow";
+            usedNumbers.push(gridItem.textContent);
+
+            return;
         }
     });
 }

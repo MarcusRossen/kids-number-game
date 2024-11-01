@@ -18,16 +18,8 @@ function populateGrid() {
     }
 }
 
-function gridColors(resetColors = false) {
+function gridColors() {
     let gridItems = Array.from(document.getElementsByClassName('gridItem'));
-
-    if (resetColors) {
-        usedNumbers = [];
-        gridItems.forEach(gridItem => {
-            gridItem.style.backgroundColor = "white";
-        });
-        return;
-    }
 
     gridItems.forEach(gridItem => {
         usedNumbers.forEach((usedNumber) => {
@@ -38,16 +30,27 @@ function gridColors(resetColors = false) {
 
         if (gridItem.textContent === randomNumber.toString()) {
             gridItem.style.backgroundColor = "yellow";
-            usedNumbers.push(gridItem.textContent);
-
             return;
         }
     });
 }
 
+function resetGridColors() {
+    let gridItems = Array.from(document.getElementsByClassName('gridItem'));
+
+    usedNumbers = [];
+    gridItems.forEach(gridItem => {
+        gridItem.style.backgroundColor = "white";
+    });
+}
+
 function populateRandomNumbers() {
-    randomNumber = getRandomNumber(11, 100);
     randomNumberVariables = [getRandomNumber(1, 5), getRandomNumber(6, 10)]
+
+    do {
+        randomNumber = getRandomNumber(11, 100);
+    } while (usedNumbers.includes(randomNumber));
+    usedNumbers.push(randomNumber.toString());
 
     randomNumberLabel.value = randomNumber;
 
@@ -81,9 +84,9 @@ document.getElementById('checkButton').addEventListener('click', function() {
             }
 
             pointScore = 0;
-            pointScoreLabel.textContent = `Points = ${pointScore}`
+            pointScoreLabel.textContent = `Points = ${pointScore}`;
 
-            gridColors(true);
+            resetGridColors();
             populateRandomNumbers();
             return;
         }
